@@ -46,6 +46,7 @@ export default defineConfig({
       file: () => import('adonisjs-scheduler/scheduler_provider'),
       environment: ['console'],
     },
+    () => import('#providers/multitenancy_provider'),
   ],
 
   /*

@@ -1,7 +1,8 @@
 import env from '#start/env'
-import { defineConfig } from '@adonisjs/lucid'
+import defineCustomConfig from '../utils/define_custom_config.js'
+import { CustomDatabaseConfig } from '../types/database.js'
 
-const dbConfig = defineConfig({
+const dbConfig = defineCustomConfig<CustomDatabaseConfig>({
   connection: 'postgres',
   connections: {
     postgres: {
@@ -18,6 +19,7 @@ const dbConfig = defineConfig({
         paths: ['database/migrations'],
       },
     },
+    mongodb: {},
   },
 })
 
